@@ -1,5 +1,5 @@
 import { NavItem } from '@/types';
-import { BookOpen, BookOpenCheck, FileText, Folder, GraduationCap, LayoutGrid, Settings, UserCog, Users } from 'lucide-react';
+import { BookOpen, BookOpenCheck, FileText, Folder, GraduationCap, LayoutGrid, Settings, UserCog, Users, LineChart, BarChartHorizontal } from 'lucide-react';
 
 export const adminNavItems: NavItem[] = [
     {
@@ -33,6 +33,18 @@ export const adminNavItems: NavItem[] = [
                 icon: FileText,
                 roles: ['admin'],
             },
+            {
+                title: 'Analytics',
+                icon: LineChart,
+                roles: ['admin'],
+                comingSoon: true,
+            },
+            {
+                title: 'Reports',
+                icon: BarChartHorizontal,
+                roles: ['admin'],
+                comingSoon: true,
+            },
         ],
     },
 ];
@@ -55,26 +67,33 @@ export const instructorNavItems: NavItem[] = [
                 title: 'Mis Cursos',
                 url: '/courses',
                 icon: FileText,
+                comingSoon: true,
             },
             {
                 title: 'Estudiantes',
                 url: '/students',
                 icon: BookOpenCheck,
+                comingSoon: true,
+            },
+            {
+                title: 'Calificaciones',
+                icon: LineChart,
+                comingSoon: true,
             },
         ],
     },
 ];
 
-
 export const footerNavItems: NavItem[] = [
-    // {
-    //     title: 'Repository',
-    //     url: 'https://github.com/laravel/react-starter-kit',
-    //     icon: Folder,
-    // },
-    // {
-    //     title: 'Documentation',
-    //     url: 'https://laravel.com/docs/starter-kits',
-    //     icon: BookOpen,
-    // },
+    {
+        title: 'Repositorio',
+        url: 'https://github.com/Angelito-Systems/Dashboard-Template-Laravel-12-Inertia-React',
+        icon: Folder,
+    },
+    {
+        title: 'Documentation',
+        url: 'https://laravel.com/docs/starter-kits',
+        icon: BookOpen,
+        comingSoon: true,
+    },
 ];

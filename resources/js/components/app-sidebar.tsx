@@ -11,12 +11,13 @@ import {
     useSidebar,
 } from '@/components/ui/sidebar';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import { adminNavItems, footerNavItems } from '@/lib/navigation';
+import { adminNavItems, footerNavItems, instructorNavItems } from '@/lib/navigation';
 import { cn } from '@/lib/utils';
 import { type NavItem, type PageProps } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
 import { useRef, useState } from 'react';
 import AppLogo from './app-logo';
+import { Badge } from '@/components/ui/badge';
 
 const NavDropdownItem = ({ item }: { item: NavItem }) => {
     const currentPath = window.location.pathname;
@@ -67,26 +68,43 @@ const NavDropdownItem = ({ item }: { item: NavItem }) => {
                                 {item.items?.map((subItem, index) => {
                                     const isSubItemActive = subItem.url === currentPath;
                                     return (
-                                        <Link
-                                            key={index}
-                                            href={subItem.url || ''}
-                                            className={cn(
-                                                'text-muted-foreground hover:text-foreground flex items-center px-3 py-2 text-sm',
-                                                'hover:bg-accent/50 transition-all duration-200',
-                                                'after:bg-accent/0 hover:after:bg-accent/40 relative after:absolute after:right-0 after:bottom-0 after:left-0 after:h-[1px]',
-                                                isSubItemActive && 'bg-accent/40 text-foreground after:bg-accent/60 font-medium',
-                                            )}
-                                        >
-                                            {subItem.icon && (
-                                                <subItem.icon
+                                        <div key={index} className="relative">
+                                            {subItem.comingSoon ? (
+                                                <div
                                                     className={cn(
-                                                        'mr-2 h-4 w-4 transition-colors',
-                                                        isSubItemActive ? 'text-foreground' : 'text-muted-foreground',
+                                                        'text-muted-foreground/60 flex items-center px-3 py-2 text-sm opacity-60 cursor-not-allowed',
                                                     )}
-                                                />
+                                                >
+                                                    {subItem.icon && (
+                                                        <subItem.icon
+                                                            className="mr-2 h-4 w-4 text-muted-foreground/60"
+                                                        />
+                                                    )}
+                                                    <span>{subItem.title}</span>
+                                                    <Badge variant="outline" className="ml-2 text-[10px] py-0 h-4">Próximamente</Badge>
+                                                </div>
+                                            ) : (
+                                                <Link
+                                                    href={subItem.url || ''}
+                                                    className={cn(
+                                                        'text-muted-foreground hover:text-foreground flex items-center px-3 py-2 text-sm',
+                                                        'hover:bg-accent/50 transition-all duration-200',
+                                                        'after:bg-accent/0 hover:after:bg-accent/40 relative after:absolute after:right-0 after:bottom-0 after:left-0 after:h-[1px]',
+                                                        isSubItemActive && 'bg-accent/40 text-foreground after:bg-accent/60 font-medium',
+                                                    )}
+                                                >
+                                                    {subItem.icon && (
+                                                        <subItem.icon
+                                                            className={cn(
+                                                                'mr-2 h-4 w-4 transition-colors',
+                                                                isSubItemActive ? 'text-foreground' : 'text-muted-foreground',
+                                                            )}
+                                                        />
+                                                    )}
+                                                    <span>{subItem.title}</span>
+                                                </Link>
                                             )}
-                                            <span>{subItem.title}</span>
-                                        </Link>
+                                        </div>
                                     );
                                 })}
                             </div>
@@ -118,15 +136,23 @@ const NavDropdownItem = ({ item }: { item: NavItem }) => {
                         const isSubItemActive = subItem.url === currentPath;
                         return (
                             <SidebarMenuItem key={index}>
-                                <SidebarMenuButton
-                                    asChild
-                                    className={cn('w-full', isSubItemActive && 'bg-sidebar-accent text-sidebar-accent-foreground font-medium')}
-                                >
-                                    <Link href={subItem.url || ''} className="flex w-full items-center">
-                                        {subItem.icon && <subItem.icon className="h-4 w-4 shrink-0" />}
+                                {subItem.comingSoon ? (
+                                    <div className="flex w-full items-center opacity-60 text-muted-foreground/70 px-3 py-2 cursor-not-allowed">
+                                        {subItem.icon && <subItem.icon className="h-4 w-4 shrink-0 mr-2" />}
                                         <span className="truncate">{subItem.title}</span>
-                                    </Link>
-                                </SidebarMenuButton>
+                                        <Badge variant="outline" className="ml-auto text-[10px] py-0 h-4">Próximamente</Badge>
+                                    </div>
+                                ) : (
+                                    <SidebarMenuButton
+                                        asChild
+                                        className={cn('w-full', isSubItemActive && 'bg-sidebar-accent text-sidebar-accent-foreground font-medium')}
+                                    >
+                                        <Link href={subItem.url || ''} className="flex w-full items-center">
+                                            {subItem.icon && <subItem.icon className="h-4 w-4 shrink-0" />}
+                                            <span className="truncate">{subItem.title}</span>
+                                        </Link>
+                                    </SidebarMenuButton>
+                                )}
                             </SidebarMenuItem>
                         );
                     })}
@@ -144,6 +170,27 @@ const NavMainItem = ({ item }: { item: NavItem }) => {
 
     if (item.type === 'dropdown') {
         return <NavDropdownItem item={item} />;
+    }
+
+    if (item.comingSoon) {
+        return (
+            <SidebarMenuItem className={cn(isCollapsed && 'flex w-full justify-center')}>
+                <div 
+                    className={cn(
+                        'flex items-center px-3 py-2 opacity-60 text-muted-foreground/70 cursor-not-allowed',
+                        isCollapsed && 'h-10 w-full justify-center',
+                    )}
+                >
+                    {item.icon && <item.icon className="h-4 w-4" />}
+                    {!isCollapsed && (
+                        <>
+                            <span className="ml-2 mr-1">{item.title}</span>
+                            <Badge variant="outline" className="ml-auto text-[10px] py-0 h-4">Próximamente</Badge>
+                        </>
+                    )}
+                </div>
+            </SidebarMenuItem>
+        );
     }
 
     return (
@@ -207,7 +254,7 @@ export function AppSidebar() {
         });
     };
 
-    const allNavItems = [...adminNavItems]; // Removemos instructorNavItems si el usuario es admin
+    const allNavItems = [...adminNavItems, ...instructorNavItems]; // Incluimos instructorNavItems para mostrarlos según el rol
     const authorizedItems = getAuthorizedItems(allNavItems);
 
     return (

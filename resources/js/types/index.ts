@@ -22,6 +22,7 @@ export interface NavItem {
     roles?: string[];  // Los roles aquí son strings (nombres de roles)
     items?: NavItem[]; // Para subitems
     type?: 'item' | 'dropdown';
+    comingSoon?: boolean;
 }
 
 export interface SharedData extends PageProps {

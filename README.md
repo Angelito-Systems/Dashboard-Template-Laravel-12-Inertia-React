@@ -222,6 +222,53 @@ public function viewAny(User $user)
 ```
 </div>
 
+## Roles y Permisos
+
+El sistema cuenta con tres roles principales:
+
+### Roles
+
+1. **Admin**
+   - Tiene acceso completo a todas las funcionalidades del sistema
+   - Puede gestionar usuarios, roles y permisos
+   - Tiene acceso a todas las secciones administrativas
+
+2. **Desarrollador**
+   - Puede acceder al panel de control
+   - Puede editar su perfil
+   - Puede crear y editar contenido
+   - Tiene acceso a los logs del sistema
+   - Puede acceder a la API
+
+3. **Usuario**
+   - Acceso básico al panel de control
+   - Puede editar su propio perfil
+
+### Usuarios de Demostración
+
+Para facilitar las pruebas, el sistema incluye usuarios preconfigurados para cada rol:
+
+| Rol | Usuario | Contraseña |
+|-----|---------|------------|
+| Admin | admin@ejemplo.com | password |
+| Desarrollador | dev@ejemplo.com | password |
+| Usuario | usuario@ejemplo.com | password |
+
+## Configuración Inicial
+
+### Seed de Datos
+
+Para cargar los roles, permisos y usuarios demo en la base de datos:
+
+```bash
+php artisan migrate:fresh --seed
+```
+
+Esta operación ejecutará los seeders en el siguiente orden:
+- PermissionSeeder: Crea los permisos básicos del sistema
+- RoleSeeder: Crea los roles y asigna los permisos correspondientes
+- DemoSeeder: Crea los usuarios de demostración con sus respectivos roles
+
 ### Estructura de Directorios
 
 <div style="background-color: #2d2d2d; color: #e6e6e6; padding: 25px; border-radius: 12px; margin: 25px 0; font-family: 'JetBrains Mono', monospace; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
