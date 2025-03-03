@@ -1,0 +1,32 @@
+MIT License with Attribution Requirement
+
+Copyright (c) 2024 Angelito Systems - Angel Calderon Mantilla
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+2. Attribution Requirement:
+   a. If you use this Software as a part of a public-facing application or website,
+      you must include a visible attribution to "Angelito Systems" and a link to
+      https://angelitosystems.com in either your application's user interface,
+      documentation, or website.
+   b. If you use this Software as a part of a commercial product or service,
+      you must acknowledge "Angelito Systems - Angel Calderon Mantilla" as the original
+      creator in your product's documentation or credits section.
+   c. These attribution requirements can only be waived with express written permission
+      from the copyright holder.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
