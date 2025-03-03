@@ -9,7 +9,7 @@
   
   <p align="center">
     <img src="https://img.shields.io/badge/Laravel-v12.0-FF2D20?style=flat-square&logo=laravel&logoColor=white&labelColor=202020" alt="Laravel v12.0">
-    <img src="https://img.shields.io/badge/React-v18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=202020" alt="React v18">
+    <img src="https://img.shields.io/badge/React-v19-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=202020" alt="React v19">
     <img src="https://img.shields.io/badge/Inertia.js-v1.0-6675E0?style=flat-square&logo=inertia&logoColor=white&labelColor=202020" alt="Inertia.js">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square&labelColor=202020" alt="License: MIT">
   </p>
