@@ -1,1 +1,18 @@
-resources/js/components/ui/*
+# Excluir directorios y archivos generados
+node_modules
+vendor
+public/build
+public/hot
+public/storage
+storage/*.key
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+
+# NO ignorar componentes UI
+!resources/js/components/ui/**
