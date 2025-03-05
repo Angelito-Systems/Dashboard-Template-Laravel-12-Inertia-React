@@ -9,7 +9,7 @@
   
   <p align="center">
     <img src="https://img.shields.io/badge/Laravel-v12.0-FF2D20?style=flat-square&logo=laravel&logoColor=white&labelColor=202020" alt="Laravel v12.0">
-    <img src="https://img.shields.io/badge/React-v18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=202020" alt="React v18">
+    <img src="https://img.shields.io/badge/React-v19-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=202020" alt="React v19">
     <img src="https://img.shields.io/badge/Inertia.js-v1.0-6675E0?style=flat-square&logo=inertia&logoColor=white&labelColor=202020" alt="Inertia.js">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square&labelColor=202020" alt="License: MIT">
   </p>
@@ -26,6 +26,8 @@
   <img src="https://via.placeholder.com/800x400?text=Dashboard+Preview" alt="Dashboard Preview" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
   <br>
 </div>
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/qFef8U?referralCode=ro-_NE)
 
 <br>
 
@@ -570,6 +572,9 @@ dashboard-template/
 </div>
 
 ---
+
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/qFef8U?referralCode=ro-_NE)
+
 
 <div align="center">
   <p style="color: #666; font-size: 14px;">© 2024 Angelito Systems. Todos los derechos reservados.</p>
